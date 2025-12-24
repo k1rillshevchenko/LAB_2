@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LAB_2.MainPage"
+             Title="XML Processor">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="15">
+            <Label Text="Пошук Студентів" FontSize="24" HorizontalOptions="Center" FontAttributes="Bold"/>
+
+            <Picker x:Name="FacultyPicker" Title="Оберіть факультет" />
+            <Entry x:Name="NameEntry" Placeholder="ПІБ студента" />
+
+            <Frame BorderColor="Gray" Padding="10">
+                <HorizontalStackLayout Spacing="20" HorizontalOptions="Center">
+                    <RadioButton x:Name="SaxRadio" Content="SAX" IsChecked="True" />
+                    <RadioButton x:Name="DomRadio" Content="DOM" />
+                    <RadioButton x:Name="LinqRadio" Content="LINQ" />
+                </HorizontalStackLayout>
+            </Frame>
+
+            <Button Text="Пошук" Clicked="OnSearchClicked" BackgroundColor="#2196F3" />
+            <Button Text="Очистити" Clicked="OnClearClicked" BackgroundColor="#9E9E9E" />
+            <Button Text="Експорт в HTML" Clicked="OnTransformClicked" BackgroundColor="#4CAF50" />
+
+            <Editor x:Name="OutputArea" HeightRequest="250" IsReadOnly="True" FontFamily="Monospace" />
+
+            <Button Text="Вихід" Clicked="OnExitClicked" BackgroundColor="#F44336" Margin="0,20,0,0"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>
